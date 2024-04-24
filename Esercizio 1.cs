@@ -37,7 +37,7 @@ namespace csharp_abstract_animals
 
        
     }
-    public class Cane : Animale {
+    public class Cane : Animale, IAnimalicheNuotano {
 
         public string verso { get; } = "Bau!";
 
@@ -56,9 +56,15 @@ namespace csharp_abstract_animals
         {
             Console.WriteLine("Sono un cane e sto mangiando una bistecca!");
         }
+
+        public void Nuota()
+        {
+            Console.WriteLine("Sto Nuotando");
+        }
     }
 
-    public class Passerotto : Animale {
+    public class Passerotto : Animale, IAnimalicheVolano
+    {
 
         public Passerotto (string razza, string nome, int età) : base(razza, nome, età)
         {
@@ -79,9 +85,15 @@ namespace csharp_abstract_animals
             Console.WriteLine("Sono un passerotto e sto maniando dei semini!");
         }
 
+        public void Vola()
+        {
+            Console.WriteLine("Sto Volando");
+        }
+
     }
 
-    public class Aquila : Animale {    
+    public class Aquila : Animale, IAnimalicheVolano
+    {    
 
            public Aquila(string razza, string nome, int età) : base(razza, nome, età)
         {
@@ -101,9 +113,13 @@ namespace csharp_abstract_animals
         {
             Console.WriteLine("Sono un aquila e sto mangiando un castoro!");
         }
+        public void Vola()
+        {
+            Console.WriteLine("Sto Volando");
+        }
     }
 
-    public class Delfino : Animale
+    public class Delfino : Animale, IAnimalicheNuotano
     {
         public Delfino (string razza, string nome, int età) : base(razza, nome, età)
         {
@@ -122,6 +138,10 @@ namespace csharp_abstract_animals
         public override void Mangia()
         {
             Console.WriteLine("Sono un Delfino e sto mangiando del pesce!");
+        }
+        public void Nuota()
+        {
+            Console.WriteLine("Sto Nuotando");
         }
     }
 }
